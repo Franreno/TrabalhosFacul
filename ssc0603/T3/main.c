@@ -1,82 +1,62 @@
 // fazer um que colocar em ordem
 #include <stdio.h>
 #include <string.h>
+#include "T3.h"
 
-
-char* minify(char s[])
-{
-    for (int i = 0; s[i]!='\0'; i++) 
-    {
-        if(s[i] >= 'A' && s[i] <= 'Z') 
-        {
-            s[i] = s[i] + 32;
-        }
-    }
-
-    return s;
-}
-
-
-int alfstrc(char str1[] , char str2[])
-{
-    // tres tipos de retorno, 0 se forem iguais, -1 se str1 tiver ordem alfabetica superior, 1 se str2 tiver ordem alfabetica superior
-    int flag;
-    int len1 = strlen(str1);
-    int len2 = strlen(str2);
-    
-    //transformar por precaucao todas as strings em minusculas.
-
-    minify(str1);
-    minify(str2);
-
-    for (int i=0, j=0; i<len1 , j<len2; i++, j++)
-    {
-
-        //str 2 ta em ordem alfabetica
-        if (str1[i] > str2[j])
-        {
-            flag = 1;
-            return flag;
-        }
-        // str 1 ta em ordem
-        else if(str1[i] < str2[j])
-        {
-            flag = -1;
-            return flag;
-        }
-        // ainda indefinido
-        else if(str1[i] == str2[j])
-        {
-            flag = 0;
-        }
-    }
-
-    return flag;
-}
-
-
-void printStringsInOrder(char str[2][32], int flag)
-{
-    printf("in order: ");
-    if(flag == -1)
-        printf("%s , %s\n" , str[0] , str[1]);
-    else if(flag == 1)
-        printf("%s , %s\n" , str[1] , str[0]);
-    else if(flag == 0)
-        printf("%s == %s\n" , str[1] , str[0]);
-}
 
 int main()
 {
-                
+    int acessos;
     char str[2][32];
+    ArvAVL* raiz = cria_ArvAVL();
+
     
-    scanf("%s %s" , str[0], str[1]);
+    while(acessos != -1)
+    {
+        printf("entrei\n Digite acessos: ");
+        scanf("%d\n " , &acessos);
+        
+        if (acessos == -1)
+            break;
+        
+        fflush(stdin);
+        printf("digite str1: ");
+        scanf(" %s\n" , str[0]  );
+        printf("digite str2: ");
+        scanf("%s\n" , str[1]  );
+        
+        insere_ArvAVL( raiz, acessos, str[0] , str[1] );    
+    }
+
+    printf("sai\n");
+
+    int choice;
+
+    char word_to_translate_complete[32];
+
+    while(choice != -1)
+    {
+        scanf("%d\n" , &choice);
+
+        scanf("%s\n" , word_to_translate_complete);
+        
+        if(choice == 0)
+            searchTree(raiz, word_to_translate_complete);
+        else if(choice == 1)
+        {
+            //autocomplete
+        }
+    }
+
+
+    //consultarv()
+
+    // scanf("%s %s" , str[0], str[1]);
 
     // organizar elas em ordem alfabetica.
-    int flag;
-    flag = alfstrc(str[0] , str[1]);
+    // int flag;
+    // flag = alfabetical(str);
     
-    printStringsInOrder(str, flag);
+    // printStringsInOrder(str, flag);
         
 }
