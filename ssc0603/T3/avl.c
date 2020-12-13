@@ -120,15 +120,15 @@ int altura_ArvAVL(ArvAVL *raiz){
 //     }
 // }
 
-// void emOrdem_ArvAVL(ArvAVL *raiz){
-//     if(raiz == NULL)
-//         return;
-//     if(*raiz != NULL){
-//         emOrdem_ArvAVL(&((*raiz)->esq));
-//         printf("%s %d\n",(*raiz)->palavra , (*raiz)->contador);
-//         emOrdem_ArvAVL(&((*raiz)->dir));
-//     }
-// }
+void emOrdem_ArvAVL(ArvAVL *raiz){
+    if(raiz == NULL)
+        return;
+    if(*raiz != NULL){
+        emOrdem_ArvAVL(&((*raiz)->esq));
+        printf("%s %d\n",(*raiz)->en_word , (*raiz)->acessos);
+        emOrdem_ArvAVL(&((*raiz)->dir));
+    }
+}
 
 
 //=================================
@@ -243,6 +243,7 @@ int searchTree(ArvAVL *raiz , char word_to_translate[32])
 
     while( this != NULL )
     {
+        // printf("entrei no while aqui\n");
         //achou a palavra la arvore
         if ( strcmp( this->en_word,  word_to_translate) == 0 )
         {
@@ -251,10 +252,12 @@ int searchTree(ArvAVL *raiz , char word_to_translate[32])
             return 1;
         }
 
-        if ( strcmp(this->en_word , word_to_translate) > 0 )
+        if ( strcmp(word_to_translate , this->en_word) > 0)
             this = this->dir;
-        else if ( strcmp(this->en_word , word_to_translate) < 0 )
+        else
             this = this->esq;  
+
+        // printf("saisasi\n");
     }
 
     return 0;
