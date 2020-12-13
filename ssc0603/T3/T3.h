@@ -17,4 +17,6 @@ void RotacaoLR(ArvAVL *A);
 void RotacaoRL(ArvAVL *A);
 int insere_ArvAVL(ArvAVL *raiz, int acessos, char en_word[32] , char pt_word[32] );
 int searchTree(ArvAVL *raiz , char word_to_translate[32]);
+
 int consulta_ArvAVL(ArvAVL *raiz, char palavra[30]);
+int autocomplete(ArvAVL *raiz, int access ,char word_to_complete[32]);

@@ -3,7 +3,6 @@
 #include <string.h>
 #include "T3.h"
 
-
 struct NO{
     int acessos;
     char en_word[32];
@@ -85,40 +84,6 @@ int altura_ArvAVL(ArvAVL *raiz){
         return(alt_dir + 1);
 }
 
-// void preOrdem_ArvAVL(ArvAVL *raiz){
-//     if(raiz == NULL)
-//         return;
-//     if(*raiz != NULL){
-        
-
-//         //tem algo na direita e na esquerda
-//         if( (*raiz)->esq != NULL && (*raiz)->dir != NULL)
-//         {
-//             printf("%s - Esq: %s - Dir: %s\n", (*raiz)->palavra, (*raiz)->esq->palavra, (*raiz)->dir->palavra);
-//         }
-//         // so tem algo na esquerda
-//         else if( (*raiz)->esq != NULL )
-//         {
-//             printf("%s - Esq: %s - Dir: %s\n", (*raiz)->palavra, (*raiz)->esq->palavra, "#");
-//         }
-//         // so tem algo na direita
-//         else if( (*raiz)->dir != NULL )
-//         {
-//             printf("%s - Esq: %s - Dir: %s\n", (*raiz)->palavra, "#", (*raiz)->dir->palavra);
-//         }
-//         //nao tem nada nem na esquerda nem na direita
-//         else
-//         {
-//             printf("%s - Esq: %s - Dir: %s\n", (*raiz)->palavra, "#" , "#");    
-//         }
-
-//         if( (*raiz)->esq != NULL )
-//             preOrdem_ArvAVL(&((*raiz)->esq));
-//         if ((*raiz)->dir != NULL)
-//             preOrdem_ArvAVL(&((*raiz)->dir));
-        
-//     }
-// }
 
 void emOrdem_ArvAVL(ArvAVL *raiz){
     if(raiz == NULL)
@@ -130,8 +95,6 @@ void emOrdem_ArvAVL(ArvAVL *raiz){
     }
 }
 
-
-//=================================
 void RotacaoLL(ArvAVL *A){//LL
     struct NO *B;
     B = (*A)->esq;
@@ -163,6 +126,7 @@ void RotacaoRL(ArvAVL *A){//RL
 }
 
 
+//Insercao de modo AVL
 int insere_ArvAVL(ArvAVL *raiz, int acessos, char en_word[32] , char pt_word[32] )
 {
     int res;
@@ -234,6 +198,12 @@ int insere_ArvAVL(ArvAVL *raiz, int acessos, char en_word[32] , char pt_word[32]
 }
 
 
+
+/*
+------------------------------------------------------------------------------------------------
+*/
+
+//procura a palavra pela arvore.
 int searchTree(ArvAVL *raiz , char word_to_translate[32])
 {
     if (raiz == NULL || (*raiz) == NULL )
@@ -241,23 +211,85 @@ int searchTree(ArvAVL *raiz , char word_to_translate[32])
 
     struct NO *this = *raiz;
 
+    //roda a arvore ate que chegue a um campo nulo ou encontre a para traduzir.
     while( this != NULL )
     {
-        // printf("entrei no while aqui\n");
-        //achou a palavra la arvore
+        //se a palavra pra traducao for encontrada na arvore...
         if ( strcmp( this->en_word,  word_to_translate) == 0 )
         {
+            // ... eh feito o output da palavra traduzida
             printf("%s\n" , this->pt_word);
             this->acessos++;
             return 1;
         }
 
+        //percorre a arvore de maneira alfabetica
         if ( strcmp(word_to_translate , this->en_word) > 0)
             this = this->dir;
         else
             this = this->esq;  
+    }
 
-        // printf("saisasi\n");
+    return 0;
+}
+
+
+//funcao que compara as strings de acordo com o tamanho requesitado
+int compareUntilSize(char *s1, char *s2, int size)
+{
+    // se o tamanho do requesitado para a comparacao for maior que a string
+    // que esta sendo comparada dentro da arvore ele cancela.
+    if( size > strlen(s2) )
+        return -1;
+    
+    // se tiver alguma letra diferente na comparacao das strings ele cancela.
+    for(int i=0; i<size; i++)
+    {
+        if( s1[i] != s2[i] )
+            return -1;
+    }
+
+    return 0;
+}
+
+//funcao de autocompletar
+int autocomplete(ArvAVL *raiz, int access ,char word_to_complete[32])
+{
+    // Need to serach the tree for words that has word_to_complete
+    // and also has at least the acess number that was given.
+    if(raiz == NULL || (*raiz) == NULL)
+        return 0;
+
+    struct NO *this = (*raiz);
+
+    //percorre a arvore ate chegar a um nodo nulo
+    while(this != NULL)
+    {
+        //comparar as strings como a funcao acima.
+        if ( compareUntilSize(word_to_complete , this->en_word , strlen(word_to_complete) ) == 0)
+        {
+            // se a palavra que contem as letras que eu quero autocompletar tiver o numero de acessos
+            // igual ou maior aos que foi requesitado ele imprime a palavra.
+            if(this->acessos >= access)
+                printf("%s\n" , this->en_word);
+
+            // verificacao recursiva dos nodulos da arvore.
+            if( this->esq != NULL)
+                autocomplete( &((this)->esq) , access , word_to_complete);
+            
+
+            if( this->dir != NULL)
+                autocomplete( &((this)->dir) , access , word_to_complete);
+            
+
+            return 1;
+        }
+
+        // verificacao recursivav dos nodulos da arvore.
+        if ( strcmp(word_to_complete , this->en_word) > 0 )
+            this = this->dir;
+        else
+            this = this->esq;
     }
 
     return 0;
