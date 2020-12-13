@@ -268,14 +268,15 @@ int autocomplete(ArvAVL *raiz, int access ,char word_to_complete[32])
         //comparar as strings como a funcao acima.
         if ( compareUntilSize(word_to_complete , this->en_word , strlen(word_to_complete) ) == 0)
         {
+            // verificacao recursiva dos nodulos da arvore.
+            if( this->esq != NULL)
+                autocomplete( &((this)->esq) , access , word_to_complete);
+
+
             // se a palavra que contem as letras que eu quero autocompletar tiver o numero de acessos
             // igual ou maior aos que foi requesitado ele imprime a palavra.
             if(this->acessos >= access)
                 printf("%s\n" , this->en_word);
-
-            // verificacao recursiva dos nodulos da arvore.
-            if( this->esq != NULL)
-                autocomplete( &((this)->esq) , access , word_to_complete);
             
 
             if( this->dir != NULL)
