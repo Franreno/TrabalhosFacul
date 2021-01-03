@@ -53,4 +53,6 @@ int main()
         }
         
     }
+
+    libera_ArvAVL(raiz);
 }
