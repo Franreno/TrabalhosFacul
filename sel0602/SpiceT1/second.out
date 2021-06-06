@@ -1,0 +1,44 @@
+
+**** 06/06/21 16:23:04 *********** Evaluation PSpice (Nov 1999) **************
+
+ *Netlist do segundo circuito, t<0, parte direita
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+v1 1 0 dc 4
+r1 1 2 3
+c1 2 0 0.014
+
+.dc v1 4 4 1
+.print dc V(2,0)
+
+**** 06/06/21 16:23:04 *********** Evaluation PSpice (Nov 1999) **************
+
+ *Netlist do segundo circuito, t<0, parte direita
+
+
+ ****     DC TRANSFER CURVES               TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+  v1          V(2,0)      
+
+   4.000E+00   4.000E+00
+
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            0.00
+

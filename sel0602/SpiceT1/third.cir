@@ -1,0 +1,20 @@
+*Netlist do terceiro circuito, t>0
+
+v1 1 0 dc 18.5
+r1 1 2 10
+l1 2 0 7.4
+c1 2 0 0.014
+
+.ic I(l1) = 1.85
+.ic V(2,0) = 4 
+
+
+.tran 0.1 8 uic
+
+.PRINT tran I(l1) V(2,0) V(1,2); Il, Vc, Vr
+
+.PLOT tran I(l1)
+.PLOT tran V(2,0)
+.PLOT tran V(1,2)
+
+.PROBE

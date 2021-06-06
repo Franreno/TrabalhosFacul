@@ -1,0 +1,8 @@
+*Netlist do segundo circuito, t<0, parte direita
+
+v1 1 0 dc 4
+r1 1 2 3
+c1 2 0 0.014
+
+.dc v1 4 4 1
+.print dc V(2,0)

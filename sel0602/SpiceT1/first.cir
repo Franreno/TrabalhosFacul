@@ -1,0 +1,8 @@
+*Primeiro Circuito, t<0, parte esquerda.
+
+V1 1 0 dc 18.5
+r1 1 2 10
+l1 2 0 7.4
+
+.dc v1 18.5 18.5 1
+.print dc I(l1)

@@ -1,0 +1,44 @@
+
+**** 06/06/21 16:18:57 *********** Evaluation PSpice (Nov 1999) **************
+
+ *Primeiro Circuito, t<0, parte esquerda.
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+V1 1 0 dc 18.5
+r1 1 2 10
+l1 2 0 7.4
+
+.dc v1 18.5 18.5 1
+.print dc I(l1)
+
+**** 06/06/21 16:18:57 *********** Evaluation PSpice (Nov 1999) **************
+
+ *Primeiro Circuito, t<0, parte esquerda.
+
+
+ ****     DC TRANSFER CURVES               TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+  V1          I(l1)       
+
+   1.850E+01   1.850E+00
+
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            0.00
+
