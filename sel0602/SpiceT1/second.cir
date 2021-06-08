@@ -1,8 +1,19 @@
 *Netlist do segundo circuito, t<0, parte direita
 
+*Fonte de tensão 4 (V)
 v1 1 0 dc 4
+
+*Resistor de 3 (ohms)
 r1 1 2 3
+
+*Capacitor de 14 (mF)
 c1 2 0 0.014
 
+
+*Definicao de análise de corrente contínua
 .dc v1 4 4 1
+
+*Output do valor da tensão que passa em C1
 .print dc V(2,0)
+
+

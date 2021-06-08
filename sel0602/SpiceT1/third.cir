@@ -1,20 +1,32 @@
 *Netlist do terceiro circuito, t>0
 
+
+*Fonte de tensão 18.5 (V)
 v1 1 0 dc 18.5
+
+*Resistor de 10 (ohms)
 r1 1 2 10
+
+*Indutor de 7.4 (H)
 l1 2 0 7.4
+
+*Capacitor de 14 (mF)
 c1 2 0 0.014
 
+*Definição das condições iniciais
 .ic I(l1) = 1.85
 .ic V(2,0) = 4 
 
-
+*Definição da partição para a análise do regime transitório
 .tran 0.1 8 uic
 
+*Output dos valores corrent L1, tensão C1 e R1 
 .PRINT tran I(l1) V(2,0) V(1,2); Il, Vc, Vr
 
+*Plot dos gráficos
 .PLOT tran I(l1)
 .PLOT tran V(2,0)
 .PLOT tran V(1,2)
 
 .PROBE
+
