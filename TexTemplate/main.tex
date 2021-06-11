@@ -1,0 +1,119 @@
+
+% Set document class for the document
+% \documentclass[12pt,english,brazil,openany]{book}
+\documentclass[a4paper,brazil,12pt,titlepage]{article}
+
+% Style Packages
+\usepackage[]{graphicx}
+\usepackage[]{color}
+\usepackage{alltt}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+
+% \usepackage[top=100pt,bottom=100pt,left=68pt,right=66pt]{geometry} %Main
+\usepackage[bottom=2cm,top=3cm,left=3cm,right=2cm]{geometry}       %ABNT
+
+
+% Prevents LaTeX from filling out a page to the bottom
+\raggedbottom
+
+\usepackage[brazil]{babel}
+\setlength{\parindent}{1cm} % padrão 15p
+\usepackage{indentfirst}
+
+
+% Adds space between caption and table
+\usepackage[tableposition=top]{caption}
+
+% Adds hyperlinks to references and ToC
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+            linkcolor = blue} % Changes the link color to black and hides the hideous red border that usually is created
+            
+
+% Draw electrical circuits
+\usepackage[american, siunitx]{circuitikz}
+
+% Math
+\usepackage{amsmath}
+
+% If multiple images are to be added, a folder (path) with all the images can be added here 
+\graphicspath{ {Images/} }
+
+% % Separates the first part of the report/thesis in Roman numerals
+% \frontmatter
+
+
+\begin{document}
+
+%%% Selects the language to be used for the first couple of pages
+\selectlanguage{brazil}
+
+\begin{titlepage}
+
+    \clearpage\thispagestyle{empty}
+    \centering
+    \vspace{2cm}
+    
+    %Titles
+    {\large Universidade de São Paulo - USP \\
+    % Escola de Engenharia de São Carlos – EESC \\
+    % Departamento de Engenharia Elétrica e de Computação – SEL
+    \par}
+    \vspace{4cm}
+    {\Huge \textbf{Title}}\\
+    \vspace{1cm}
+    {\large \textbf{Subtitle} \par}
+    \vspace{3cm}
+    {\large \textbf{Name} \\
+            \textbf{Identifier} \par}
+            
+    \vspace{10cm}
+    {\normalsize Date \par}
+    \vspace{2cm}
+    
+    \pagebreak
+    
+\end{titlepage}
+
+% Adds a table of contents
+\tableofcontents{}
+
+\clearpage
+
+% Uncomment the following three rows for a table of figures and/or tables as they are not needed for lab reports
+% \listoffigures
+% \clearpage
+% \listoftables
+
+
+%%%%% Text body starts here!
+
+
+% All page numbers positioned at the bottom of the page
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footers
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt} % remove the header rule
+\renewcommand{\headrulewidth}{0pt} % remove rule between header and text
+\lhead{Francisco Reis Nogueira}
+\rhead{11954374}
+\renewcommand{\headrulewidth}{1pt}
+
+\include{Sections/example}
+% \include{Sections/}
+% \include{Sections/}
+% \include{Sections/}
+
+% Adding a bibliography if citations are used in the report
+% \bibliographystyle{plain}
+% \bibliography{refs.bib}
+% % Adds reference to the Bibliography in the ToC
+% \addcontentsline{toc}{chapter}{\bibname}
+
+
+\end{document}
