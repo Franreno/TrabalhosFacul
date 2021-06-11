@@ -1,0 +1,12 @@
+#Ignore all files
+*
+#Except directories
+!/**/
+#Except files that have extensions
+!*.*
+
+#The code above works to ignore files that doesnt have extensions, such as compiled C files.
+
+
+.vscode
+*.o
