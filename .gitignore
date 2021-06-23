@@ -5,8 +5,12 @@
 #Except files that have extensions
 !*.*
 
+#Except Makefile
+!Makefile
+
 #The code above works to ignore files that doesnt have extensions, such as compiled C files.
 
 
 .vscode
 *.o
+*.exe
