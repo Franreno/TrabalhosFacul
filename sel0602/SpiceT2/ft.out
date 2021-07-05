@@ -1,0 +1,156 @@
+
+**** 07/05/21 20:12:50 *********** Evaluation PSpice (Nov 1999) **************
+
+ *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+V1 1 0 ac 7 SIN(0 7 47.1098631552 0 0 0)
+
+r1 1 2 8
+
+c1 2 3 0.04
+
+r2 3 0 74
+
+c2 3 4 0.02
+
+r3 4 0 37
+
+r4 4 5 5
+
+l1 5 0 0.5
+
+.AC LIN 1 47.11 47.11
+.TRAN 1 12 10
+
+.print AC V(3,0) VP(3,0) V(4,0) VP(4,0);
+.print AC I(r2) IP(r2) I(r3) IP(r3) I(r4) IP(r4);
+
+.probe
+
+.end     
+
+**** 07/05/21 20:12:50 *********** Evaluation PSpice (Nov 1999) **************
+
+ *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    0.0000  (    2)    0.0000  (    3)    0.0000  (    4)    0.0000      
+
+(    5)    0.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1           0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 07/05/21 20:12:50 *********** Evaluation PSpice (Nov 1999) **************
+
+ *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
+
+
+ ****     AC ANALYSIS                      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+  FREQ        V(3,0)      VP(3,0)     V(4,0)      VP(4,0)     
+
+
+   4.711E+01   5.274E+00   2.440E+00   5.280E+00   2.704E+00
+
+**** 07/05/21 20:12:50 *********** Evaluation PSpice (Nov 1999) **************
+
+ *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
+
+
+ ****     AC ANALYSIS                      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+  FREQ        I(r2)       IP(r2)      I(r3)       IP(r3)      I(r4)       
+
+
+   4.711E+01   7.127E-02   2.440E+00   1.427E-01   2.704E+00   3.565E-02
+
+**** 07/05/21 20:12:50 *********** Evaluation PSpice (Nov 1999) **************
+
+ *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
+
+
+ ****     AC ANALYSIS                      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+  FREQ        IP(r4)      
+
+
+   4.711E+01  -8.536E+01
+
+**** 07/05/21 20:12:50 *********** Evaluation PSpice (Nov 1999) **************
+
+ *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    0.0000  (    2)    0.0000  (    3)    0.0000  (    4)    0.0000      
+
+(    5)    0.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1           0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .09
+
