@@ -3,8 +3,8 @@
 [V1](https://www.wolframalpha.com/input/?i=74*%280.21663+-+0.02577i+-+%280.14542+-+0.02881i%29%29)
 [V2](https://www.wolframalpha.com/input/?i=37*%280.14542+-+0.02881i+-+%280.002883+-+0.035538i%29%29)
 
-[I1](https://www.wolframalpha.com/input/?i=0.21663+-+0.02577i)
-[I2](https://www.wolframalpha.com/input/?i=0.14542+-+0.02881i)
+[I1](https://www.wolframalpha.com/input/?i=%280.21663+-+0.02577i%29+-+%280.14542+-+0.02881i%29)
+[I2](https://www.wolframalpha.com/input/?i=%280.14542+-+0.02881i%29+-+%280.002883+-+0.035538i%29)
 [I3](https://www.wolframalpha.com/input/?i=0.002883+-+0.035538i)
 
 x≈0.21663 - 0.02577 i, y≈0.14542 - 0.02881 i, z≈0.002883 - 0.035538i
