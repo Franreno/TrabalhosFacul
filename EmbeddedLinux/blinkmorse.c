@@ -272,19 +272,6 @@ int handleFile(FILE *ptr, char *state)
     return 0;
 }
 
-int getArgvAmmt(char *argv[])
-{
-    int i=0;
-    int ammt = 0;
-    while(argv[i])
-    {
-        ammt++;
-        i++;
-    }
-
-    return ammt;
-}
-
 
 void doZenithMorse()
 {
@@ -305,11 +292,13 @@ void doZenithMorse()
     for (int i = 0; i < 19; i++)
     { 
         if(zenithInMorse[i] != INTRA_SPACE)
-            handleFile(LEDPointer, "1");
+           if(handleFile(LEDPointer, "1"))
+		   return;
         
         usleep(zenithInMorse[i]); //sleep time between dits and dashes
 
-        handleFile(LEDPointer, "0");
+        if(handleFile(LEDPointer, "0"))
+		return;
 
         usleep(INTER_SPACE); //slep time between characters
     }
@@ -321,9 +310,7 @@ int main(int argc, char *argv[])
     printf("Led blinking start\n");
     FILE *LEDPointer = NULL;
 
-    int argvAmmt = getArgvAmmt(argv);
-
-    if (argvAmmt == 1)
+    if (argc == 1)
     {
         printf("\tNo input given, blinking zenith in morse\n");
         doZenithMorse();
@@ -331,11 +318,11 @@ int main(int argc, char *argv[])
     }
 
     printf("\tBlinking your input!\n");
-    for(int i=1; i<argvAmmt; i++)
+    for(int i=1; i<argc; i++)
     {
         printf("\t\tBlinking %s\n" , argv[i]);
 
-        int **Elements = (int**)malloc(sizeof(int*) * (argvAmmt-1) );
+        int **Elements = (int**)malloc(sizeof(int*) * (argc-1) );
         char *word = argv[i];
         int wordLenght = strlen(word);
 
