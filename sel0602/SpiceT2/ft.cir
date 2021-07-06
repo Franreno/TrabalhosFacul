@@ -1,6 +1,6 @@
 *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
-V1 1 0 ac 7 SIN(0 7 47.1098631552 0 0 0)
+V1 1 0 ac 7 SIN(0 7 47.1098631552 0 0 90)
 
 r1 1 2 8
 

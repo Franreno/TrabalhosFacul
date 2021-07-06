@@ -1,5 +1,5 @@
 
-**** 07/05/21 20:58:29 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/06/21 20:31:04 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
@@ -12,7 +12,7 @@
 
 
 
-V1 1 0 ac 7 SIN(0 7 47.1098631552 0 0 0)
+V1 1 0 ac 7 SIN(0 7 47.1098631552 0 0 90)
 
 r1 1 2 8
 
@@ -38,7 +38,7 @@ l1 5 0 0.5
 
 .end     
 
-**** 07/05/21 20:58:29 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/06/21 20:31:04 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
@@ -68,7 +68,7 @@ l1 5 0 0.5
     TOTAL POWER DISSIPATION   0.00E+00  WATTS
 
 
-**** 07/05/21 20:58:29 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/06/21 20:31:04 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
@@ -85,7 +85,7 @@ l1 5 0 0.5
 
    4.711E+01   5.274E+00   2.440E+00   5.280E+00   2.704E+00
 
-**** 07/05/21 20:58:29 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/06/21 20:31:04 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
@@ -102,7 +102,7 @@ l1 5 0 0.5
 
    4.711E+01   7.127E-02   2.440E+00   1.427E-01   2.704E+00   3.565E-02
 
-**** 07/05/21 20:58:29 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/06/21 20:31:04 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
@@ -119,7 +119,7 @@ l1 5 0 0.5
 
    4.711E+01  -8.536E+01
 
-**** 07/05/21 20:58:29 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/06/21 20:31:04 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
@@ -134,7 +134,7 @@ l1 5 0 0.5
  NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
 
 
-(    1)    0.0000  (    2)    0.0000  (    3)    0.0000  (    4)    0.0000      
+(    1)    7.0000  (    2)    7.0000  (    3)    0.0000  (    4)    0.0000      
 
 (    5)    0.0000  
 
