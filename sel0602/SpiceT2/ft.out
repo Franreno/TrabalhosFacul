@@ -1,5 +1,5 @@
-
-**** 07/05/21 20:41:41 *********** Evaluation PSpice (Nov 1999) **************
+
+**** 07/05/21 20:58:29 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
@@ -38,7 +38,7 @@ l1 5 0 0.5
 
 .end     
 
-**** 07/05/21 20:41:41 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/05/21 20:58:29 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
@@ -68,7 +68,7 @@ l1 5 0 0.5
     TOTAL POWER DISSIPATION   0.00E+00  WATTS
 
 
-**** 07/05/21 20:41:41 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/05/21 20:58:29 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
@@ -85,7 +85,7 @@ l1 5 0 0.5
 
    4.711E+01   5.274E+00   2.440E+00   5.280E+00   2.704E+00
 
-**** 07/05/21 20:41:41 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/05/21 20:58:29 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
@@ -102,7 +102,7 @@ l1 5 0 0.5
 
    4.711E+01   7.127E-02   2.440E+00   1.427E-01   2.704E+00   3.565E-02
 
-**** 07/05/21 20:41:41 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/05/21 20:58:29 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
@@ -119,7 +119,7 @@ l1 5 0 0.5
 
    4.711E+01  -8.536E+01
 
-**** 07/05/21 20:41:41 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/05/21 20:58:29 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
@@ -152,5 +152,5 @@ l1 5 0 0.5
 
           JOB CONCLUDED
 
-          TOTAL JOB TIME             .08
+          TOTAL JOB TIME             .06
 
