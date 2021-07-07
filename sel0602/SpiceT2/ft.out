@@ -1,5 +1,5 @@
-
-**** 07/06/21 20:31:04 *********** Evaluation PSpice (Nov 1999) **************
+
+**** 07/07/21 11:50:54 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
@@ -12,33 +12,48 @@
 
 
 
+*Fonte de tensao alternada, ANG eh 90 para ser equivalente a o cos
 V1 1 0 ac 7 SIN(0 7 47.1098631552 0 0 90)
 
+*Resistor de 8 (ohms)
 r1 1 2 8
 
+*Capacitor de 40 (mF)
 c1 2 3 0.04
 
+*Resistor de 74 (ohms)
 r2 3 0 74
 
+*Capacitor de 20 (mF)
 c2 3 4 0.02
 
+*Resistor de 37 (ohms)
 r3 4 0 37
 
+*Resistor de 5 (ohms)
 r4 4 5 5
 
+*Indutor de 0.5 (H)
 l1 5 0 0.5
 
+*Definio do tipo de analise a ser feita
 .AC LIN 1 47.11 47.11
+
+*Definicao da particao do tempo para os graficos
 .TRAN 1 12 10
 
+*Print dos valores de V1 e V2, juntamente com seu angulo
 .print AC V(3,0) VP(3,0) V(4,0) VP(4,0);
+
+*Print das correntes I1, I2 e I3, juntamente com seu angulo
 .print AC I(r2) IP(r2) I(r3) IP(r3) I(r4) IP(r4);
 
+*Plot dos graficos
 .probe
 
 .end     
 
-**** 07/06/21 20:31:04 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/07/21 11:50:54 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
@@ -68,7 +83,7 @@ l1 5 0 0.5
     TOTAL POWER DISSIPATION   0.00E+00  WATTS
 
 
-**** 07/06/21 20:31:04 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/07/21 11:50:54 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
@@ -85,7 +100,7 @@ l1 5 0 0.5
 
    4.711E+01   5.274E+00   2.440E+00   5.280E+00   2.704E+00
 
-**** 07/06/21 20:31:04 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/07/21 11:50:54 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
@@ -102,7 +117,7 @@ l1 5 0 0.5
 
    4.711E+01   7.127E-02   2.440E+00   1.427E-01   2.704E+00   3.565E-02
 
-**** 07/06/21 20:31:04 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/07/21 11:50:54 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
@@ -119,7 +134,7 @@ l1 5 0 0.5
 
    4.711E+01  -8.536E+01
 
-**** 07/06/21 20:31:04 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/07/21 11:50:54 *********** Evaluation PSpice (Nov 1999) **************
 
  *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
 
