@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def plot_eq(TB=5, TA=10, TM=20, kam=2, kab=3):
+def plot_eigen_eq(TB=5, TA=10, TM=20, kam=2, kab=3):
     getlamb2 = lambda x,y: -(2*x+y  +  np.sqrt(4*(x**2)+(y**2)))/2
     getlamb3 = lambda x,y: -(2*x+y  -  np.sqrt(4*(x**2)+(y**2)))/2
 
@@ -10,6 +10,8 @@ def plot_eq(TB=5, TA=10, TM=20, kam=2, kab=3):
 
     c2 = ( (lamb3*(TM-TB) ) + (kam*(TM-TA)) )/(lamb3-lamb2)
     c3 = ( ( lamb2*(TB-TM) ) + (kam*(TA-TM)) ) / (lamb3-lamb2)
+
+    print(f"c2: {c2}, c3: {c3}")
 
 
     Tmt = lambda t: c2*np.exp(lamb2*t) + c3*np.exp(lamb3*t) + TB
@@ -21,13 +23,13 @@ def plot_eq(TB=5, TA=10, TM=20, kam=2, kab=3):
     YTm = Tmt(t_range)
     YTa = Tat(t_range)    
 
-    plt.plot(t_range, YTm, 'b', label="$T_m(t)$")
-    plt.plot(t_range, YTa, 'r', label="$T_A(t)$")
-    plt.axhline(y=Tbt, color='g', label="$T_B(t)$")
-    plt.legend()
-    plt.xlabel("$t$")
-    plt.ylabel("Temperatura")
-    plt.show()
+    return YTm, YTa, TB
 
+    # plt.plot(t_range, YTm, 'b', label="$T_m(t)$")
+    # plt.plot(t_range, YTa, 'r', label="$T_A(t)$")
+    # plt.axhline(y=Tbt, color='g', label="$T_B(t)$")
+    # plt.legend()
+    # plt.xlabel("$t$")
+    # plt.ylabel("Temperatura")
+    # plt.show()
 
-plot_eq()
