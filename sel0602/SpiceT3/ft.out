@@ -1,0 +1,89 @@
+
+**** 07/20/21 17:52:33 *********** Evaluation PSpice (Nov 1999) **************
+
+ *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+V1 1 0 AC 74 SIN(0 74 0.318309 0 0 90)
+I1 0 4 AC 3 SIN(0 3 0.318309 0 0 -24)
+
+R1 1 2 2
+L1 2 3 0.5
+
+C1 3 0 0.5
+
+L2 3 4 0.5 
+
+R2 3 5 1
+L3 5 4 0.5
+
+R3 4 0 1
+L4 4 0 1
+
+.AC LIN 1 0.318309Hz 0.318309Hz
+
+.TRAN 0.05 8 uic
+
+.PRINT AC VP( L2 ) VM( L2 ) IM( L2 ) IP ( L2 )
+
+.END
+
+**** 07/20/21 17:52:33 *********** Evaluation PSpice (Nov 1999) **************
+
+ *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    0.0000  (    2)    0.0000  (    3)    0.0000  (    4)    0.0000      
+
+(    5)    0.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V1           0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 07/20/21 17:52:33 *********** Evaluation PSpice (Nov 1999) **************
+
+ *Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
+
+
+ ****     AC ANALYSIS                      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+  FREQ        VP(L2)      VM(L2)      IM(L2)      IP(L2)      
+
+
+   3.183E-01  -2.203E+01   1.614E+01   1.614E+01  -1.120E+02
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            0.00
+

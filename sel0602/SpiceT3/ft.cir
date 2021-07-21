@@ -1,0 +1,24 @@
+*Netlist do circuito. Trabalho SPICE-SEL0602. Francisco Reis Nogueira 11954374
+V1 1 0 AC 74 SIN(0 74 0.318309 0 0 90)
+I1 0 4 AC 3 SIN(0 3 0.318309 0 0 -24)
+
+R1 1 2 2
+L1 2 3 0.5
+
+C1 3 0 0.5
+
+L2 3 4 0.5 
+
+R2 3 5 1
+L3 5 4 0.5
+
+R3 4 0 1
+L4 4 0 1
+
+.AC LIN 1 0.318309Hz 0.318309Hz
+
+.TRAN 0.05 8 uic
+
+.PRINT AC VP( L2 ) VM( L2 ) IM( L2 ) IP ( L2 )
+
+.END
