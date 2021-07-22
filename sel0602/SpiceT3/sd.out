@@ -1,7 +1,7 @@
 
-**** 07/22/21 18:16:39 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/22/21 18:50:27 *********** Evaluation PSpice (Nov 1999) **************
 
- *Netlist do circuito completo. Trabalho SPICE-SEL0602. 
+ *Netlist do circuito de thevenan. Trabalho SPICE-SEL0602. 
 
 
  ****     CIRCUIT DESCRIPTION
@@ -27,8 +27,7 @@ R3 4 6 1
 *Indutores
 L1 2 3 0.5
 L2 5 4 0.5
-L3 3 4 0.5
-L4 6 0 1
+L3 6 0 1
 
 *Capacitores
 C1 3 0 0.5
@@ -38,13 +37,12 @@ C1 3 0 0.5
 
 .PRINT AC V(3,4) VP(3,4)
 
-.PRINT AC I(L3) IP(L3)
 .PROBE
 .END
 
-**** 07/22/21 18:16:39 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/22/21 18:50:27 *********** Evaluation PSpice (Nov 1999) **************
 
- *Netlist do circuito completo. Trabalho SPICE-SEL0602. 
+ *Netlist do circuito de thevenan. Trabalho SPICE-SEL0602. 
 
 
  ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
@@ -72,9 +70,9 @@ C1 3 0 0.5
     TOTAL POWER DISSIPATION   0.00E+00  WATTS
 
 
-**** 07/22/21 18:16:39 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/22/21 18:50:27 *********** Evaluation PSpice (Nov 1999) **************
 
- *Netlist do circuito completo. Trabalho SPICE-SEL0602. 
+ *Netlist do circuito de thevenan. Trabalho SPICE-SEL0602. 
 
 
  ****     AC ANALYSIS                      TEMPERATURE =   27.000 DEG C
@@ -87,28 +85,11 @@ C1 3 0 0.5
   FREQ        V(3,4)      VP(3,4)     
 
 
-   3.183E-01   9.854E+00  -7.214E+01
+   3.183E-01   1.607E+01  -9.410E+01
 
-**** 07/22/21 18:16:39 *********** Evaluation PSpice (Nov 1999) **************
+**** 07/22/21 18:50:27 *********** Evaluation PSpice (Nov 1999) **************
 
- *Netlist do circuito completo. Trabalho SPICE-SEL0602. 
-
-
- ****     AC ANALYSIS                      TEMPERATURE =   27.000 DEG C
-
-
-******************************************************************************
-
-
-
-  FREQ        I(L3)       IP(L3)      
-
-
-   3.183E-01   9.854E+00  -1.621E+02
-
-**** 07/22/21 18:16:39 *********** Evaluation PSpice (Nov 1999) **************
-
- *Netlist do circuito completo. Trabalho SPICE-SEL0602. 
+ *Netlist do circuito de thevenan. Trabalho SPICE-SEL0602. 
 
 
  ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
@@ -121,9 +102,9 @@ C1 3 0 0.5
  NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
 
 
-(    1)   74.0000  (    2)   25.2180  (    3)   25.2180  (    4)   25.2180      
+(    1)   74.0000  (    2)   37.4130  (    3)   37.4130  (    4)   19.1200      
 
-(    5)   25.2180  (    6)    0.0000  
+(    5)   19.1200  (    6)    0.0000  
 
 
 
@@ -131,13 +112,13 @@ C1 3 0 0.5
     VOLTAGE SOURCE CURRENTS
     NAME         CURRENT
 
-    V1          -2.439E+01
+    V1          -1.829E+01
 
-    TOTAL POWER DISSIPATION   1.80E+03  WATTS
+    TOTAL POWER DISSIPATION   1.35E+03  WATTS
 
 
 
           JOB CONCLUDED
 
-          TOTAL JOB TIME             .02
+          TOTAL JOB TIME            0.00
 

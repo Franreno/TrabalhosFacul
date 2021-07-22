@@ -1,4 +1,4 @@
-*Netlist do circuito completo. Trabalho SPICE-SEL0602. 
+*Netlist do circuito de Norton. Trabalho SPICE-SEL0602. 
 *Francisco Reis Nogueira 11954374
 
 *Fonte de tensao
@@ -9,23 +9,21 @@ I1 0 4 AC 3 -74 SIN(0 3 0.31830 0 0 16)
 
 *Resistores
 R1 1 2 2
-R2 3 5 1
-R3 4 6 1
+R2 4 5 1
 
 *Indutores
 L1 2 3 0.5
-L2 5 4 0.5
-L3 3 4 0.5
-L4 6 0 1
+L3 5 0 1
 
 *Capacitores
 C1 3 0 0.5
 
+V2 3 4 DC 0
+
 .AC LIN 1 0.31830 0.31830
 .TRAN .05 12 3
 
-.PRINT AC V(3,4) VP(3,4)
+.PRINT AC I(V2) IP(V2)
 
-.PRINT AC I(L3) IP(L3)
 .PROBE
 .END
