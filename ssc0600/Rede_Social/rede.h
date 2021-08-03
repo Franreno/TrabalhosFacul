@@ -1,0 +1,18 @@
+char Users(char *comando, char *UserName, char *UserNick);
+void user_interface(char *comando, char *UserName, char *UserNick);
+void adm_interface(char *comando, char *UserName, char *UserNick);
+void PainelInicio();
+void PainelADM();
+void PainelFeedUsuario();
+void IsCommandValid(char *comando);
+int MoreActions();
+int main();
+int NumberOfUsers();
+void PainelInfoUsuario();
+void PainelFeedGeralUsuario();
+void PainelPostsUsuario();
+void PainelADMUsuarios();
+void PainelADMInformations();
+void PainelNovaPostagem();
+void PainelFollow(char *login);
+void PainelUnfollow(char *login);
