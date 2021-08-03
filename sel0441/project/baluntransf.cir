@@ -1,0 +1,24 @@
+*Balun com Transformador
+
+*Fonte de Tensão
+Vin 1 0 AC 12 SIN(0 12 1024 0 0 90)
+
+*Impedancia de entrada
+r1 1 2 500
+
+*Indutores respeitando a proporcao 1:2
+l1 2 0 10
+l2 3 4 20
+
+*Impedancias de saida. zout1 e zout2
+r2 3 0 500
+r3 0 4 500
+
+*impedancia mutua entre os indutores
+k1 l1 l2 1
+
+.ac LIN 1 1024 1024
+.print AC V(3) V(4)
+
+
+.end

@@ -1,0 +1,18 @@
+Circuito impedancia de entrada
+
+v1 1 0 dc 0 ac 1
+
+l1 1 2 4mH
+c1 2 0 8uF
+
+r1 2 3 1k
+
+c2 1 3 8uF
+l2 3 0 4
+
+.control
+ac dec 100 1 10k
+
+plot v(1)/i(v1)
+
+.endc
