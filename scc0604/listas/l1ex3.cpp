@@ -64,6 +64,10 @@ public:
         grauMaximo = grauMaximoValue;
     }
 
+    int getGrauMaximo() {
+        return grauMaximo;
+    }
+
     void Mostra();
     long long Calcula(int value);
     int Add(double aValue, int expValue);
@@ -160,7 +164,7 @@ int main()
         if (!p.Add(constantToBeAdded, expoenteToBeAdded))
             p.Mostra();
         else
-            cout << "\tO Valor do expoente a ser adicionado (" << expoenteToBeAdded << ") eh maior que o permitido (" << grauMaximo << ")" << endl
+            cout << "\tO Valor do expoente a ser adicionado (" << expoenteToBeAdded << ") eh maior que o permitido (" << p.getGrauMaximo() << ")" << endl
                  << endl;
     }
 
