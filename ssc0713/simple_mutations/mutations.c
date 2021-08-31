@@ -87,7 +87,6 @@ void elitismo(Org *d)
 void avalia(Org *d)
 {
     double x;
-    // printf("Generation: %d\n", d->params.gen);
     for (int i = 0; i < tamPop; i++)
     {
         x = d->pops.ind[i];
@@ -100,22 +99,24 @@ void avalia(Org *d)
         // printf("\tFitness %d (%lf) = %lf\n", i, d->pops.ind[i], d->pops.fit[i]);
     }
     d->params.media/tamPop*1.0;
-    for(int i = 0; i<tamPop; i++)
-    {
-        printf("%d;%lf;%lf\n", d->params.gen, d->pops.ind[i], d->pops.fit[i]);
-    }
+
+    //print generations best and mean
+    printf("%d;%lf\n", d->params.gen, d->params.maxfit);
+
+    //printf("%d;%lf;%lf\n", d->params.gen, d->pops.ind[i], d->pops.fit[i]);
+    
 }
 
 int main()
 {
     srand(time(NULL));
 
-    printf("Creating population\n");
+    //printf("Creating population\n");
 
     Org allData;
     initPop(&allData);
-    printf("Sucess\n");
-
+    //printf("Sucess\n");
+    printf("Gen;MaxFit\n");
     while (fabs(allData.params.maxfit - GOAL) > 0.001)
     {
 
