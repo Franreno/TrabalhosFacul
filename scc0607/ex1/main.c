@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "ex1.h"
 
 /*
@@ -28,7 +29,10 @@ void func2(char file[])
 {
     FILE *fp = fopen(file, "rb");
     if (fp == NULL)
+    {
+        printf("Arquivo não encontrado\n");
         return;
+    }
 
     readEverything(fp);
     fclose(fp);
@@ -41,7 +45,10 @@ void func3(char file[])
 {
     FILE *fp = fopen(file, "rb");
     if (fp == NULL)
+    {
+        printf("Arquivo não encontrado\n");
         return;
+    }
     int registerToBeRead;
     scanf("%d", &registerToBeRead);
 
@@ -51,7 +58,13 @@ void func3(char file[])
 int main()
 {
     int cmd;
-    char file[fileNameSize];
+    char *file = (char *)malloc(sizeof(char) * fileNameSize);
+    if (file == NULL)
+    {
+        printf("Memory Error\n");
+        exit(EXIT_FAILURE);
+    }
+
     PESSOA p;
 
     scanf("%d", &cmd);
@@ -74,6 +87,7 @@ int main()
     default:
         break;
     }
+    free(file);
 
     return 0;
 }

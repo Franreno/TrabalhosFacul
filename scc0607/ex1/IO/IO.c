@@ -87,8 +87,6 @@ int readEverything(FILE *fp)
     long size = ftell(fp);
     fseek(fp, 0, SEEK_SET);
 
-    printf("%ld\n", size);
-
     //Loops through it until hits the file's 'size' limit.
     while (ftell(fp) != size)
     {
@@ -113,16 +111,18 @@ int readRegister(FILE *fp, int registerToBeRead)
     PESSOA p;
 
     int offsetBaseValue = (firstNameSize + lastNameSize + emailSize + nationalitySize + ((int)sizeof(int)));
-    int offset = offsetBaseValue * (registerToBeRead - 1);
-    int offsetCheck = offsetBaseValue * (registerToBeRead);
+    int offset = offsetBaseValue * (registerToBeRead);
 
     // Get size of file.
     fseek(fp, 0, SEEK_END);
     long size = ftell(fp);
 
     // Check if offset is surpasing the size.
-    if (offsetCheck > size)
+    if (offset > size)
+    {
+        printf("Não foi possível ler o arquivo\n");
         return 0;
+    }
 
     // Seek position of element to be read.
     fseek(fp, offset, SEEK_SET);
