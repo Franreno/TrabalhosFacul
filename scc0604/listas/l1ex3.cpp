@@ -175,7 +175,7 @@ int main()
     p.Mostra();
     cout << "O valor de P(" << valueToBeCalculated << ") eh igual a: " << _valueCalculated << endl;
 
-    cout << p.Mostra() << endl;
+    p.Mostra();
 
     return 0;
 }
